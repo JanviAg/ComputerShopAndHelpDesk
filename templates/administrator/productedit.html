@@ -1,0 +1,79 @@
+{% extends 'adminbase.html' %}
+{% block title %}
+Admin Panel | Dashboard
+{% endblock title %}
+
+{% block content %}
+<div class="dashboard-ecommerce">
+    <div class="container-fluid dashboard-content ">
+
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="card">
+                <h5 class="card-header">Edit 'Product' to database</h5>
+                <div class="card-body">
+                    <form action="productupdate/" id="basicform" data-parsley-validate="" method="POST"  enctype="multipart/form-data">  {% csrf_token %}
+                        <input type="hidden" name="txtphid" value="{{product.0}}">
+                        <div class="form-group">
+                            <label for="validationCustom04">Product</label>
+                            <input type="text" class="form-control" id="validationCustom04" placeholder="Enter product name"
+                                required  value="{{product.3}}" name="txtpname">
+                            <div class="invalid-feedback">
+                                Please provide a valid product.
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="validationCustom04">Category</label>
+                                <input type="text" class="form-control" id="validationCustom04" placeholder="Select Category"
+                                    required value="{{product.1}}" name="txtpcat">
+                                <div class="invalid-feedback">
+                                    Please provide a valid category.
+                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="validationCustom04">Brand</label>
+                                <input type="text" class="form-control" id="validationCustom04" placeholder="Select Brand"
+                                    required value="{{product.2}}" name="txtpbrand">
+                                <div class="invalid-feedback">
+                                    Please provide a valid brand.
+                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="validationCustom04">Upload Image</label>
+                                <input type="file"  class="form-control" id="validationCustom04" placeholder="Image"
+                                    required value="{{product.4}}" name="txtpimg">
+                                <div class="invalid-feedback">
+                                    Please provide a valid image.
+                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="validationCustom04">Quantity</label>
+                                <input type="text" class="form-control" id="validationCustom04" placeholder="Enter available quantity"
+                                    required value="{{product.6}}" name="txtpqty">
+                                <div class="invalid-feedback">
+                                    Please provide a valid quantity.
+                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="validationCustom04">Price</label>
+                                <input type="text" class="form-control" id="validationCustom04" placeholder="Enter Price"
+                                    required value="{{product.5}}" name="txtpprice">
+                                <div class="invalid-feedback">
+                                    Please provide a valid price.
+                                </div>
+                        </div>
+
+                        <div class="col-sm-6 pl-0">
+                                <button type="submit" class="btn btn-space btn-primary">Submit</button>
+                                <button class="btn btn-space btn-secondary">Cancel</button>
+                            
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock content %}

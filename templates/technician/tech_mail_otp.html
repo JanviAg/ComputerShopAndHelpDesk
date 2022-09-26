@@ -1,0 +1,62 @@
+{% extends 'adminbase.html' %}
+{% load static %}
+{% block title %}
+Technician Panel | OTP
+{% endblock title %}
+
+{% block navbar %}
+{% endblock navbar %}
+{% block sidebar %}
+{% endblock sidebar %}
+
+<style>
+    html,
+    body {
+        height: 100%;
+    }
+
+    body {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+</style>
+{% block dasbhoardecomm%}
+{% endblock dasbhoardecomm %}
+{% block content %}
+
+    <div class="splash-container">
+        <div class="card">
+            <div class="card-header text-center"><img class="logo-img" src="{% static '/customer/assets/images/logo/logo-4.png' %}" height="100"
+                    width="300" alt="logo"><span class="splash-description">Forgot Password</span></div>
+            <div class="card-body">
+                <form action={% url 'tech_change_password' %}>
+                    <p>Enter OTP given in Mail</p>
+                    <div class="form-group">
+                        <input name="otp" placeholder="OTP" type="number" maxlength="6" pattern="[0-9]{6}" title="Enter valid OTP" required autofocus " oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                    </div>
+                    <div class="form-group pt-1"><button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button></div>
+                </form>
+
+
+                <!--<form action={% url 'changepassword' %}>
+                    <p>Enter otp given through mail</p>
+                    <div class="form-group pt-1">
+                        <input name="otp" placeholder="OTP" type="number" maxlength="6" pattern="[0-9]{6}" title="Enter valid OTP" required autofocus " oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                    </div>
+                    <div class="form-group pt-1"><button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button></div>
+                </form>-->
+            </div>
+            <div class="card-footer text-center">
+                <span><a href="{% url 'techlogin' %}">Log in instead?</a></span>
+            </div>
+        </div>
+    </div>
+
+{% block footer %}
+{% endblock footer %}
+
+{% endblock content %}

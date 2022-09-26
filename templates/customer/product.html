@@ -1,0 +1,74 @@
+{% extends 'customerbase.html' %}
+{% load static %}
+{% block title %}
+Product :: Computer Shop & HelpDesk
+{% endblock title %}
+
+{% block content %}
+
+
+<div class="breadcrumb-area bg-gray">
+    <div class="container">
+        <div class="breadcrumb-content text-center">
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="active">Product View</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="product-details-area pt-120 pb-115">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="product-details-fixed-img">
+                    <div class="easyzoom-style">
+                        <div class="easyzoom easyzoom--overlay">
+                            <a href="{% static '/customer/assets/images/product-details/b-large-1.jpg' %}">
+                                <img src="{% static '/customer/assets/images/product-details/large-1.jpg' %}" alt="">
+                            </a>
+                        </div>
+                        <a class="easyzoom-pop-up img-popup" href="{% static '/customer/assets/images/product-details/b-large-1.jpg' %}"><i
+                                class="icon-size-fullscreen"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="product-details-content pro-details-content-mrg">
+                    <h2 class="pb-50"> product name</h2>
+                    
+                    <p> description </p>
+                    <div class="pro-details-price">
+                        <span class="new-price">$75.72</span>
+                    </div>
+             
+                  
+                    <div class="pro-details-quality">
+                        <span>Quantity:</span>
+                        <div class="cart-plus-minus">
+                            <input class="cart-plus-minus-box" type="text" name="qtybutton" value="1">
+                        </div>
+                    </div>
+                    <div class="product-details-meta">
+                        <ul>
+                            <li><span>Category:</span> <a href="#">Woman,</a> <a href="#">Dress,</a> <a
+                                    href="#">T-Shirt</a></li>
+                            
+                        </ul>
+                    </div>
+                    <div class="pro-details-action-wrap">
+                        <div class="pro-details-add-to-cart">
+                            <a title="Add to Cart" href="#">Add To Cart </a>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock content %}

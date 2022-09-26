@@ -1,0 +1,58 @@
+{% extends 'customerbase.html' %}
+{% block title %}
+Ticket :: Computer Shop & HelpDesk
+{% endblock title %}
+
+{% block content %}
+
+
+<div class="breadcrumb-area bg-gray">
+    <div class="container">
+        <div class="breadcrumb-content text-center">
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="active">Ticket </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="contact-area pt-50 pb-20">
+    <div class="container">
+        <div class="contact-info-wrap-3 pb-100">
+            
+            <div class="get-in-touch-wrap">
+                <h3>Submit a new ticket!</h3>
+                <p>Once submitted your ticket will be attended as soon as possible.</p>
+                <div class="contact-from contact-shadow">
+                    <form id="contact-form"  method="post" onsubmit="javascript: alert('Ticket Submitted!')">{% csrf_token %}
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6">
+                                <label>Name</label>
+                                <input name="name" type="text" placeholder="Rajbeer Chabra" readonly="readonly" minlength="5" maxlength="35" pattern="^\w+$"
+                                title="Username should only have letters, numbers and underscore" required
+                                autofocus>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <label>Email</label>
+                                <input name="email" type="email" placeholder="craj@yahoo.in	" readonly="readonly"
+                                pattern="[a-z0-9.]+@[a-z0-9.-]+.[a-z]{2,}$"
+                                title="Only lowercase letters, numbers and periods are allowed" required>
+                            </div>
+                            
+                            <div class="col-lg-12 col-md-12">
+                                <textarea name="message" placeholder="Type your query here!" maxlength="250" required></textarea>
+                            </div>
+                            <div class="col-lg-12 col-md-12 " style="text-align:center;">
+                                <button class="submit" type="submit" >Submit ticket!</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    {% endblock content %}

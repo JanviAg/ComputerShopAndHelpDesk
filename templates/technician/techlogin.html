@@ -1,0 +1,105 @@
+{% extends 'adminbase.html' %}
+{% load static %}
+{% block title %}
+Technician Panel | Login
+{% endblock title %}
+
+{% block navbar %}
+{% endblock navbar %}
+{% block sidebar %}
+{% endblock sidebar %}
+
+<style>
+    html,
+    body {
+        height: 100%;
+    }
+
+    body {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+</style>
+{% block dasbhoardecomm%}
+{% endblock dasbhoardecomm %}
+{% block content %}
+<div class="splash-container">
+    <div class="card ">
+        <div class="card-header text-center"><a href="{% url 'index' %}"><img class="logo-img"
+                    src="{% static '/customer/assets/images/logo/logo-4.png' %}" alt="logo" height="100"
+                    width="300"></a>
+            <span class="splash-description bg-warning">Technician Login</span>
+        </div>
+
+        <div class="card-body">
+
+            <!-- <form class="needs-validation" novalidate> {% csrf_token %}
+
+                <div class="form-group">
+                    <input class="form-control form-control-lg" id="username" type="text" placeholder="Username"
+                        autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <input class="form-control form-control-lg" id="password" type="password" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label class="custom-control custom-checkbox">
+                        <input class="custom-control-input" type="checkbox"><span class="custom-control-label">Remember
+                            Me</span>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+            </form> -->
+
+            <form action="#" id="basicform" onsubmit="javascript:alert('Login Successful!')"> {% csrf_token %}
+
+
+                <div class="form-group">
+                    <label for="inputEmail">Email address</label>
+                    <input type="email" class="form-control" name="email" placeholder="Email"
+                                        pattern="[a-z0-9.]+@[a-z0-9.-]+.[a-z]{2,}$"
+                                        title="Invalid Email. @ and . are missing." required>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword">Password</label>
+                    <input id="inputPassword" name="password" type="password" placeholder="Password" required="" class="form-control">
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-6 pb-2 pb-sm-4 pb-lg-0 pr-0">
+                        <label class="be-checkbox custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input"><span
+                                class="custom-control-label">Remember me</span>
+                        </label>
+                    </div>
+                    <div class="col-sm-6 pl-0">
+                        <p class="text-right">
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+                        </p>
+                    </div>
+                </div>
+            </form>
+
+
+        </div>
+        <div class="card-footer bg-white p-0  ">
+            <div class="card-footer-item card-footer-item-bordered">
+                <a href="{% url 'techsignup' %}" class="footer-link">Create An Account</a>
+            </div>
+            <div class="card-footer-item card-footer-item-bordered">
+                <a href="{% url 'techforgotpassword' %}" class="footer-link">Forgot Password</a>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+{% block footer %}
+{% endblock footer %}
+
+{% endblock content %}

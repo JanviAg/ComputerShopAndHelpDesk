@@ -1,0 +1,203 @@
+{% extends 'customerbase.html' %}
+{% load static %}
+{% block title %}
+:: Computer Shop & HelpDesk
+{% endblock title %}
+
+{% block content %}
+
+
+<div class="breadcrumb-area bg-gray">
+    <div class="container">
+        <div class="breadcrumb-content text-center">
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="active"> Build</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="contact-area pt-50 pb-20">
+    <div class="container">
+        <!-- <center> <img
+                src="https://upload.wikimedia.org/wikipedia/commons/7/7c/AMD_Logo.svg" 
+                height="50" wdith="300" alt="brand-logo">
+
+        </center> -->
+        <form class="needs-validation"  onsubmit="javascript:alert('Products Added To Cart Successfully!')"  action="#"
+            id="basicform" novalidate method="POST" enctype="multipart/form-data"> {% csrf_token %}
+
+
+            <div class="form-group row pt-25">
+                <label class="col-sm-2 col-form-label">CPU</label>
+                <div class="col-sm-10">
+                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                        <option selected>Choose...</option>
+                        <option value="1">AMD Ryzen 5 3600</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Motheboard</label>
+                <div class="col-sm-10">
+                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                        <option selected>Choose...</option>
+                        <option value="1">AMD B550M AM4 M-ATX Motherboard</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">RAM</label>
+                <div class="col-sm-10">
+                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                        <option selected>Choose...</option>
+                        <option value="1">ADATA RGB 16GB</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">HDD</label>
+                <div class="col-sm-10">
+                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                        <option selected>Choose...</option>
+                        <option value="1">Hitachi 1TB</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">SSD</label>
+                <div class="col-sm-10">
+                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                        <option selected>Choose...</option>
+                        <option value="1">Seagate SSD 250GB</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">GPU</label>
+                <div class="col-sm-10">
+                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                        <option selected>Choose...</option>
+                        <option value="1">Sapphire R9 370</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Case/Cabinet</label>
+                <div class="col-sm-10">
+                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                        <option selected>Choose...</option>
+                        <option value="1">Antec Cabinet</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Monitor</label>
+                <div class="col-sm-10">
+                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                        <option selected>Choose...</option>
+                        <option value="1">Asus ROG 24' Monitor</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Keyboard</label>
+                <div class="col-sm-10">
+                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                        <option selected>Choose...</option>
+                        <option value="1">Logitech RGB Keyboard</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-2 col-form-label">Mouse</label>
+                <div class="col-sm-10">
+                    <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                        <option selected>Choose...</option>
+                        <option value="1">Logitech G402 Mouse</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="validationCustom04" class="col-sm-2 col-form-label">Headphones</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="validationCustom04" placeholder="Enter product name">
+                </div>
+                <div class="invalid-feedback">
+                    Please provide a valid product.
+                </div>
+            </div>
+
+
+
+            <!-- <div class="form-group row">
+                <label for="validationCustom04" class="col-sm-2 col-form-label">Headphones</label>
+                <div class="col-sm-10">
+                    <select class="custom-select my-1 mr-sm-2" id="validationCustom04">
+                        <option selected>Choose...</option>
+                        <option value="1">Corsair Surround Sound Headphones</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <div class="invalid-feedback">
+                    Please provide a valid product.
+                </div>
+            </div> -->
+
+            <!-- 
+
+            <div class="form-group">
+                <label for="validationCustom04">Product</label>
+                <input type="text" class="form-control" id="validationCustom04" placeholder="Enter product name"
+                    required name="txtpname">
+                <div class="invalid-feedback">
+                    Please provide a valid product.
+                </div>
+            </div> -->
+
+
+            <div class="form-group row">
+                <!-- <div class="col-sm-10">
+                    <button type="submit" class="btn btn-primary">Sign in</button>
+                </div> -->
+                <button type="submit" class="btn btn-danger btn-lg btn-block">Add to cart!</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+{% endblock content %}

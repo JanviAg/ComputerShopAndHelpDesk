@@ -1,0 +1,45 @@
+{% extends 'adminbase.html' %}
+{% block title %}
+Admin Panel | Dashboard
+{% endblock title %}
+
+{% block content %}
+
+<div class="dashboard-ecommerce">
+    <div class="container-fluid dashboard-content ">
+
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="card">
+                <h5 class="card-header">Edit 'Brand' to database</h5>
+                <div class="card-body">
+                    <form class="needs-validation" novalidate method="POST" action="brandupdate/"> {% csrf_token %}
+                        <div class="row">
+
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <label for="validationCustom04">Brand</label>
+                                <input type="hidden" name="txthid" value="{{brand.0}}">
+                                <input type="text" name="txtbad" class="form-control" id="validationCustom04" placeholder="Enter Brand name" required value="{{brand.1}}">
+                                <div class="invalid-feedback">
+                                    Please provide a valid Brand.
+                                </div>
+                            </div>
+
+
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="form-group">
+
+                                </div>
+                            </div>
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
+                                <button type="submit" class="btn btn-space btn-primary">Submit</button>
+                                <button class="btn btn-space btn-secondary">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

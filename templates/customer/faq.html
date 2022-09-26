@@ -1,0 +1,120 @@
+{% extends 'customerbase.html' %}
+{% load static %}
+{% block title %}
+FAQ :: Computer Shop & HelpDesk
+{% endblock title %}
+
+{% block content %}
+
+<div class="breadcrumb-area bg-gray">
+    <div class="container">
+        <div class="breadcrumb-content text-center">
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="active">FAQs</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="blog-area pt-0 pb-100">
+    <div class="container">
+        <div class="row flex-row-reverse">
+            <div class="col-lg-12">
+                <div class="blog-details-wrapper">
+                    <div class="blog-details-top">
+                        <div class="blog-details-img">
+                            <img alt="" src="assets/images/blog/blog-details.jpg">
+                        </div>
+                        <div class="blog-details-content">
+
+                            <h1 style="text-align:center;">General FAQs</h1>
+                            <ul style="list-style-type: circle;">
+                                <li>
+                                    <h4>How can I order?</h4>
+                                    <p>You can order easily using our online platform. When you find a product you need,
+                                        you can add it to cart, login and go through the ordering process. After the
+                                        order is ready, you will be asked to confirm it. Order summary will also be
+                                        stored to your account.</p>
+                                </li>
+                                <br>
+                                <li>
+                                    <h4>Why should I buy online?</h4>
+                                    <p>Speeding up the process. By ordering online you will you will get prices faster
+                                        and you will be able to go through order confirmation and payment process much
+                                        faster. This could save days of your time. Also, queries can be solved in much
+                                        less time with the use of our ticket section and FAQ as well.</p>
+                                </li>
+                                <br>
+                                <li>
+                                    <h4>How to contact customer service?</h4>
+                                    <p>You can get most of your doubts solved at ticket section. If you are still not
+                                        satisfied with the response you can mail us at <em style="color: blue;">
+                                            admin@shophelpdesk.com </em>or call us at <em style="color: blue;">+91
+                                            9876543210</em></p>
+                                </li>
+                                <!-- <br>
+                                <li>
+                                    <h4>Where should we reach out for technical queries?</h4>
+                                    <p>You can get your queries solved at the Ticket section. Click on Ticket section in top header and submit your queries and we will tend to it in short duration.</p>
+                                </li>
+                                <br>
+                                <li>
+                                    <h4>Where can I post my review for this website?</h4>
+                                    <p>You can let us know your review by posting it at Feedback section which is visible in top header</p>
+                                </li>
+                                
+                                <li>
+                                    <h4>How to create an account</h4>
+                                    <p>Click on <em>Login</em> on top right corner of home page and click <em>Create new account.</em> Fill in the details and click on <em>Register</em>.Your account has been created.</p>
+                                </li>
+                                <br>
+                                <li>
+                                    <h4>How do I change my personal details</h4>
+                                    <p>Click on My account icon on the home page, it will redirect you to customer dashboard. From there you can select <em>Account Details</em> and change your information like password, email address, display name, etc</p>
+                                </li>
+                                <br>
+                                <li>
+                                    <h4>When will I receive my order?</h4>
+                                    <p>7-8 Business days. We pack your order with utmost care to see to it that you receive the order in best condition.
+                                    </p>
+                                </li> -->
+                            </ul>
+                            <h1 style="text-align:center;">Technical FAQs</h1>
+                            <ul style="list-style-type: circle;">
+                                {% for i in faq %}
+                                <li>
+                                    <h4>{{i.2}}</h4>
+                                    <p>{{i.3}}</p>
+                                </li>
+                                <br>
+                                {% endfor %}
+
+                                
+
+
+                                <!-- <h1 class="pt-50 pb-20" style="text-align:center;">Technical FAQs</h1>
+                            <h3 class="">Question</h3>
+                            <p>Ans. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                                dolor in reprhendit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                                Excepteur sint occaecat cupidatat non proident, sunt in culpa qei officia deser mollit
+                                anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                                accusantium doloremque laudantium, totam rem aperiam. </p>
+
+                            <h5><blockquote>Still unsatisfied? Feel free to file a ticket!</blockquote></h5> -->
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,130 @@
+{% extends 'adminbase.html' %}
+{% load static %}
+{% block title %}
+Technician Panel | Registration
+{% endblock title %}
+
+{% block navbar %}
+{% endblock navbar %}
+{% block sidebar %}
+{% endblock sidebar %}
+
+<style>
+    html,
+    body {
+        height: 100%;
+    }
+
+    body {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+</style>
+{% block dasbhoardecomm%}
+{% endblock dasbhoardecomm %}
+{% block content %}
+<div class="splash-container">
+    <div class="card ">
+        <div class="card-header text-center"><a href="{% url 'index' %}"><img class="logo-img"
+                    src="{% static '/customer/assets/images/logo/logo-4.png' %}" alt="logo" height="100"
+                    width="300"></a>
+            <span class="splash-description bg-warning">Technician Registration</span>
+        </div>
+
+        <div class="card-body">
+
+            <!-- <form class="needs-validation" novalidate> {% csrf_token %}
+
+                <div class="form-group">
+                    <input class="form-control form-control-lg" id="username" type="text" placeholder="Username"
+                        autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <input class="form-control form-control-lg" id="password" type="password" placeholder="Password">
+                </div>
+                <div class="form-group">
+                    <label class="custom-control custom-checkbox">
+                        <input class="custom-control-input" type="checkbox"><span class="custom-control-label">Remember
+                            Me</span>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+            </form> -->
+
+            <form action={% url 'techlogin' %} onsubmit="javascript:alert('Registraton Successful!')" id="basicform" > {% csrf_token %}
+
+
+                <div class="form-group">
+                    
+                    <input class="form-control form-control-lg" type="text" name="nick" required placeholder="Username" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" name="user_email" placeholder="Email"
+                                        pattern="[a-z0-9.]+@[a-z0-9.-]+.[a-z]{2,}$"
+                                        title="Invalid Email. @ and . are missing." required>
+                </div>
+                <div class="form-group">
+                    <input class="form-control form-control-lg" id="pass1" type="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}"
+                    title="Must contain at least one  number, one uppercase, one lowercase letter, minimum 8 and maximum 20 characters"
+                    required>
+                </div>
+                <div class="form-group">
+                    <input class="form-control form-control-lg"  type="password" placeholder="Confirm Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}"
+                    title="Must contain at least one  number, one uppercase, one lowercase letter, minimum 8 and maximum 20 characters"
+                    required>
+                </div>
+
+                <div class="form-group">
+                    <input class="form-control form-control-lg" type="date" name="dob" required="" placeholder="Date of Birth" autocomplete="off">
+                </div>
+
+                <div class="form-group">
+                    <!-- <input class="form-control form-control-lg" type="text" name="gender" required="" placeholder="Gender" autocomplete="off">
+                    <label for="input-select">Example Select</label> -->
+                                                <select class="form-control" id="gender-select">
+                                                    <option value="" disabled selected>-Select Gender-</option>
+                                                    <option>Male</option>
+                                                    <option>Female</option>
+                                                    <option>Other</option>
+                                                </select>
+                </div>
+
+                <div class="form-group">
+                    <input class="form-control form-control-lg" type="tel" name="Phone#" required="" placeholder="Phone#" pattern="[0-9]{10}" title="enter only 10 digits" autocomplete="off">
+                </div>
+
+                <div class="form-group">
+                    <input class="form-control form-control-lg" type="text" name="Address" required="" placeholder="Address" autocomplete="off">
+                </div>
+                <!--<div class="form-group">
+                    <input class="form-control form-control-lg" type="text" name="PIN" required="" size=6 placeholder="PIN" autocomplete="off">
+                </div>-->
+                <div class="form-group">
+                    <label class="custom-control custom-checkbox">
+                        <input class="custom-control-input" type="checkbox"><span class="custom-control-label">By creating an account, you agree the <a href="#">terms and conditions</a></span>
+                    </label>
+                </div>
+
+                <div class="form-group pt-2">
+                    <button class="btn btn-block btn-primary" type="submit">Register My Account</button>
+                </div>
+                
+                
+            </form>
+
+
+        </div>
+       
+
+
+    </div>
+</div>
+
+{% block footer %}
+{% endblock footer %}
+
+{% endblock content %}

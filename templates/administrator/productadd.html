@@ -1,0 +1,116 @@
+{% extends 'adminbase.html' %}
+{% block title %}
+Admin Panel | Dashboard
+{% endblock title %}
+
+{% block content %}
+<div class="dashboard-ecommerce">
+    <div class="container-fluid dashboard-content ">
+
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+            <div class="card">
+                <h5 class="card-header">Add 'Product' to database</h5>
+                <div class="card-body">
+
+                    <form class="needs-validation" onsubmit="javascript:alert('Product Added Successfully!')" action="productinsert/" id="basicform" novalidate method="POST" enctype="multipart/form-data">  {% csrf_token %}
+
+                        <div class="form-group">
+                            <label for="validationCustom04">Product</label>
+                            <input type="text" class="form-control" id="validationCustom04" placeholder="Enter product name"
+                                required name="txtpname">
+                            <div class="invalid-feedback">
+                                Please provide a valid product.
+                            </div>
+                        </div>
+
+                        <!-- ################################## 
+                            USE THIS FOR VALIDATION SCREENSHOT! -->
+                        <div class="form-group">
+                            
+
+                            <label for="validationCustom04">Category</label>
+                                <input type="text" class="form-control" id="validationCustom04" placeholder="-Select Category-"
+                                    required name="txtpcat">
+                                <div class="invalid-feedback">
+                                    Please select a valid category.
+                                </div>
+
+                                <div class="form-group">
+                            <label for="validationCustom04">Brand</label>
+                                <input type="text" class="form-control" id="validationCustom04" placeholder="-Select Brand-"
+                                    required name="txtpbrand">
+                                <div class="invalid-feedback">
+                                    Please select a valid brand.
+                                </div>
+                        </div>
+                        </div>
+
+                        <!--
+                            ############################### 
+                        USE THIS FOR VALIDATION SCREENSHOT! -->
+
+
+
+
+                        <!-- <div class="form-group">
+                            <label for="validationCustom04">Category</label>
+                                <select class="form-control" id="validationCustom04" placeholder="Select Category"
+                                    required name="txtpcat">
+                                    <option>-Select Category-</option>
+                                    </select>
+                                <div class="invalid-feedback">
+                                    Please select a valid category.
+                                </div>
+                        </div>                   
+            
+                        <div class="form-group">
+                            <label for="validationCustom04">Brand</label>
+                            <select class="form-control" id="validationCustom04" placeholder="-Select Brand-"
+                                    required name="txtpbrand">
+                                    <option>-Select Brand-</option>
+                                    </select>
+                                <div class="invalid-feedback">
+                                    Please select a valid brand.
+                                </div>
+                        </div> -->
+
+                        <div class="form-group">
+                            <label for="validationCustom04">Upload Image</label>
+                                <input type="file"  class="form-control" id="validationCustom04" placeholder="Image"
+                                    required name="txtpimg">
+                                <div class="invalid-feedback">
+                                    Please provide a valid image.
+                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="validationCustom04">Quantity</label>
+                                <input type="text" class="form-control" id="validationCustom04" placeholder="Enter available quantity"
+                                    required name="txtpqty">
+                                <div class="invalid-feedback">
+                                    Please provide a valid quantity.
+                                </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="validationCustom04">Price</label>
+                                <input type="text" class="form-control" id="validationCustom04" placeholder="Enter Price"
+                                    required name="txtpprice">
+                                <div class="invalid-feedback">
+                                    Please provide a valid price.
+                                </div>
+                        </div>
+
+                        <div class="col-sm-6 pl-0">
+                                <button type="submit" class="btn btn-space btn-primary">Submit</button>
+                                <button class="btn btn-space btn-secondary">Cancel</button>
+                            
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock content %}

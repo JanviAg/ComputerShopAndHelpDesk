@@ -1,0 +1,61 @@
+{% extends 'customerbase.html' %}
+{% load static %}
+{% block title %}
+:: Computer Shop & HelpDesk
+{% endblock title %}
+
+{% block content %}
+
+
+<div class="breadcrumb-area bg-gray">
+    <div class="container">
+        <div class="breadcrumb-content text-center">
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="active"> Build</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="contact-area pt-50 pb-20">
+    <div class="container">
+        <div class="contact-info-wrap-3 pb-100 ">
+
+            <div class="get-in-touch-wrap ">
+                <h2 style="text-align:center;">Longing to build a PC but not sure where to start?</h2>
+                <p style="text-align:center;">You've come to the right place! Choose your preference.</p>
+                <center>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <!-- <h5 class="card-title">Red team? Build AMD-based PCs!</h5> -->
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/AMD_Logo.svg"
+                                        height="50" wdith="300" alt="brand-logo">
+                                    <p class="card-text pt-25">Prefer to build an AMD powered PC? Choose from our range of Ryzen processors! Ryzen 3, Ryzen 5, Ryzen 7. </p>
+                                    <a href="{% url 'buildamd' %}" class="btn btn-danger">AMD Build</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Intel_logo_%282020%2C_dark_blue%29.svg/320px-Intel_logo_%282020%2C_dark_blue%29.svg.png" 
+                height="50" wdith="300" alt="brand-logo">
+                                    <!-- <h5 class="card-title">Blue team? Build Intel-based PCs!</h5> -->
+                                    <p class="card-text pt-25">If you wish to build an Intel powered PC, choose from our range of i3, i5 and i7 processors!</p>
+                                    <a href="{% url 'buildintel' %}" class="btn btn-primary">Intel Build</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </center>
+            </div>
+
+        </div>
+    </div>
+
+    {% endblock content %}
